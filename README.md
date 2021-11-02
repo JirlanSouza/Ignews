@@ -6,13 +6,14 @@ It is an application for publishing news about the world of React.
 
 > Typescript  
 > ReactJs  
-> NextJs
+> NextJs  
 > Sass
 
-### Integrstred with
+### Integrated with
 
-> Stripe
-> FaunaDb
+> Stripe  
+> FaunaDb  
+> Prismic CMS
 
 ## Pages
 
