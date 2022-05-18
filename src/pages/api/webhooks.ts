@@ -79,6 +79,7 @@ export default async function Webhooks(
             throw new Error('Unhandlerd event.');
         }
       } catch (err) {
+        console.log(err);
         return response.json({ error: 'Webhook handler failed.' });
       }
     }

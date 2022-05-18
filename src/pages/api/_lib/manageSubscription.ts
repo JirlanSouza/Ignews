@@ -32,7 +32,7 @@ export async function saveSubscription(
       q.Replace(
         q.Select(
           'ref',
-          q.Get(q.Match(q.Index('user_by_stripe_customer_id'), subscriptionId))
+          q.Get(q.Match(q.Index('subscription_by_id'), subscriptionId))
         ),
         { data: subscriptionData }
       )
