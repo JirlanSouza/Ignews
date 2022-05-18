@@ -1,9 +1,9 @@
-import { useRouter } from "next/dist/client/router";
-import Link from "next/link";
+import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 
-import { ActiveLink } from "../ActiveLink";
-import { SignInButton } from "../SignInButton";
-import styles from "./styles.module.scss";
+import { ActiveLink } from '../ActiveLink';
+import { SignInButton } from '../SignInButton';
+import styles from './styles.module.scss';
 
 export function Header() {
   return (

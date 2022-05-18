@@ -1,20 +1,20 @@
-import { useSession, signIn, signOut } from "next-auth/client";
-import { api } from "../../services/api";
-import { getStripeJs } from "../../services/stripe-js";
+import { useSession, signIn, signOut } from 'next-auth/client';
+import { api } from '../../services/api';
+import { getStripeJs } from '../../services/stripe-js';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 export function SubscribeButton({ priceId }) {
   const session = useSession();
 
   async function handleSubscribe() {
     if (!session) {
-      signIn("github");
+      signIn('github');
       return;
     }
 
     try {
-      const response = await api.post("/subscribe");
+      const response = await api.post('/subscribe');
 
       const { sessionId } = response.data;
 
