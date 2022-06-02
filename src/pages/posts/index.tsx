@@ -44,42 +44,50 @@ export default function Posts({ posts }: PostsProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient();
+  try {
+    const prismic = getPrismicClient();
 
-  type PrismicPostData = {
-    title: string;
-    content: { type: string; text: string }[];
-  };
-
-  const response = await prismic.query<PrismicPostData>(
-    [Prismic.Predicates.at('document.type', 'post')],
-    {
-      fetch: ['post.title', 'post.content'],
-      pageSize: 100,
-    }
-  );
-
-  const posts: Post[] = response.results.map(post => {
-    return {
-      slug: post.uid,
-      title: RichText.asText(post.data.title),
-      excerpt:
-        post.data.content.find(content => content.type === 'paragraph')?.text ??
-        '',
-      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
-        'pt-DB',
-        {
-          day: '2-digit',
-          month: 'long',
-          year: 'numeric',
-        }
-      ),
+    type PrismicPostData = {
+      title: string;
+      content: { type: string; text: string }[];
     };
-  });
 
-  return {
-    props: {
-      posts,
-    },
-  };
+    const response = await prismic.query<PrismicPostData>(
+      [Prismic.Predicates.at('document.type', 'post')],
+      {
+        fetch: ['post.title', 'post.content'],
+        pageSize: 100,
+      }
+    );
+
+    const posts: Post[] = response.results.map(post => {
+      return {
+        slug: post.uid,
+        title: RichText.asText(post.data.title),
+        excerpt:
+          post.data.content.find(content => content.type === 'paragraph')?.text ??
+          '',
+        updatedAt: new Date(post.last_publication_date).toLocaleDateString(
+          'pt-DB',
+          {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric',
+          }
+        ),
+      };
+    });
+
+    return {
+      props: {
+        posts,
+      },
+    };
+  } catch (err) {
+    return {
+      props: {
+        posts: [],
+      },
+    };
+  }
 };
