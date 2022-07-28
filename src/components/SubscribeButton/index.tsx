@@ -5,7 +5,7 @@ import { getStripeJs } from '../../services/stripe-js';
 
 import styles from './styles.module.scss';
 
-export function SubscribeButton({ priceId }) {
+export function SubscribeButton() {
   const [session] = useSession();
   const router = useRouter();
 
@@ -39,7 +39,7 @@ export function SubscribeButton({ priceId }) {
       className={styles.subscribeButton}
       onClick={handleSubscribe}
     >
-      Subscribe Now
+      Subscribe now
     </button>
   );
 }
