@@ -1,10 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import Stripe from 'stripe';
 import { mocked } from 'ts-jest/utils';
 
 import Posts, { getStaticProps } from '../../pages/posts';
 import { getPrismicClient } from '../../services/prismic';
-import { stripe } from '../../services/stripe';
 
 jest.mock('next-auth/client', () => {
   return {
@@ -39,11 +37,6 @@ describe('Home page', () => {
   });
 
   it('loads initial data', async () => {
-    const price = {
-      id: 'fake-price-id',
-      unit_amount: 1000,
-    } as any;
-
     const getPrismicClientMocked = mocked(getPrismicClient);
     getPrismicClientMocked.mockReturnValueOnce({
       query: jest.fn().mockResolvedValueOnce({

@@ -54,9 +54,9 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   const prismic = getPrismicClient();
 
-  type PrimicPostData = { title: string; content: Object[] };
+  type PrismicPostData = { title: string; content: Object[] };
 
-  const response = await prismic.getByUID<PrimicPostData>(
+  const response = await prismic.getByUID<PrismicPostData>(
     'post',
     String(slug),
     {}
