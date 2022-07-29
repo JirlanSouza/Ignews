@@ -23,13 +23,8 @@ const posts = [
   },
 ];
 
-describe('Home page', () => {
+describe('Posts page', () => {
   it('renders correctly', () => {
-    const product = {
-      priceId: 'fake-price-id',
-      amount: '$US 9.99',
-    };
-
     render(<Posts posts={posts} />);
 
     expect(screen.getByText(posts[0].title)).toBeInTheDocument();
