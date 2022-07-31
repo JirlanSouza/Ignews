@@ -31,6 +31,7 @@ In the project directory, you can run:
 
 ## Application
 [Ignews app](https://ignews-pi-one.vercel.app)
+deployed in Vercel
 
 ## License
 
