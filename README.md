@@ -29,6 +29,9 @@ In the project directory, you can run:
 
 `yarn build` to create the build for production project.
 
+## Application
+[Ignews app](https://ignews-pi-one.vercel.app)
+
 ## License
 
 This project is under license [MIT](LICENCE)
