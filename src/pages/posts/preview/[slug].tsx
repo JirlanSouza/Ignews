@@ -26,6 +26,7 @@ export default function PostPreviw({ post }: PostPreviewProps) {
     if (session?.activeSubscription) {
       route.replace(`/posts/${post.slug}`);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
 
   return (
