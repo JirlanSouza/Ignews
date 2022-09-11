@@ -1,5 +1,4 @@
 # IgNews
-
 It is an application for publishing news about the world of React.
 
 ### Technologies used
@@ -13,9 +12,10 @@ It is an application for publishing news about the world of React.
 
 > Stripe  
 > FaunaDb  
-> Prismic CMS
+> Prismic CMS  
 
 ## Pages
+Acces demo [Ignews app](https://ignews-pi-one.vercel.app)
 
 ### Home
 
@@ -23,15 +23,19 @@ It is an application for publishing news about the world of React.
 
 ## To run project
 
-In the project directory, you can run:
+Clone the source code `https://github.com/JirlanSouza/Ignews.git`
 
-`yarn dev` to run in development mode.
+In the project directory:
 
-`yarn build` to create the build for production project.
+create a `.env` environment configuration file following the `.example.env`
 
-## Application
-[Ignews app](https://ignews-pi-one.vercel.app)
-deployed in Vercel
+you can run:
+
+`npm install` or `yarn` to install project dependices
+
+`ǹpm run dev` or `yarn dev` to run in development mode.
+
+`ǹpm run build` or `yarn build` to create the build for production project.
 
 ## License
 
