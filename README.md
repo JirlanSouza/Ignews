@@ -35,4 +35,4 @@ deployed in Vercel
 
 ## License
 
-This project is under license [MIT](LICENCE)
+This project is under license [MIT](LICENSE)
