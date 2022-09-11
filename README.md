@@ -17,9 +17,13 @@ It is an application for publishing news about the world of React.
 ## Pages
 Acces demo [Ignews app](https://ignews-pi-one.vercel.app)
 
-### Home
+#### Home
 
 ![home](./screenshots/home.png?raw=true)
+
+#### Posts
+
+![posts](./screenshots/posts.png?raw=true)
 
 ## To run project
 
